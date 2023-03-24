@@ -35,7 +35,9 @@ namespace Archer
 
         private void Update()
         {
-  
+            transform.LookAt(target);
+            transform.position = target.transform.position + offset;
+            //transform.eulerAngles += target.transform.eulerAngles;
         }
 
     }
