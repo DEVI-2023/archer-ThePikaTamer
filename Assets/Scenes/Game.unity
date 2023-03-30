@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireInputReference: {fileID: 5197073158939415375, guid: fd9d5ebb29d8f644abc8a12d57b17173, type: 3}
   arrowPrefab: {fileID: 1256064569770400, guid: 5a341abfeeb6f3743b7686c2984e0c6e, type: 3}
-  force: 1000
+  force: 483.51
   handPosition: {fileID: 2143648746}
 --- !u!1001 &486735436
 PrefabInstance:
