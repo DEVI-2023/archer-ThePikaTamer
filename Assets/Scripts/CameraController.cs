@@ -35,22 +35,22 @@ namespace Archer
 
         private void Update()
         {
-            //transform.LookAt(target);
+            //
             //transform.position = target.transform.position + offset;
             //transform.eulerAngles += target.transform.eulerAngles;
-            /*
-            //Vector3 desiredPosition = target.position + (Quaternion.Euler(0, angle, 0) * offset) - (target.forward * distance);
-            //transform.position = Vector3.Lerp(transform.position, desiredPosition, travelTime*Time.deltaTime);
-            Vector3 newPos*/
-            RelocateCamera();
+            /**/
+            Vector3 desiredPosition = target.position + (Quaternion.Euler(0, angle, 0) * offset) - (target.forward * distance);
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, travelTime*Time.deltaTime);
+            transform.LookAt(target);
+            //RelocateCamera();
         }
 
-        private void RelocateCamera()
+        /*private void RelocateCamera()
         {
             transform.position = target.transform.position + offset- transform.forward*distance;
             transform.rotation = Quaternion.Euler(angle, target.eulerAngles.y, 0);
             transform.LookAt(target.position+offset);
-        }
+        }*/
     }
 
 }
