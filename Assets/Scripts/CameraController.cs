@@ -38,19 +38,15 @@ namespace Archer
             //
             //transform.position = target.transform.position + offset;
             //transform.eulerAngles += target.transform.eulerAngles;
+            var referencePosition = target.position + offset;
+            float offsetX = Mathf.Cos(angle * Mathf.Deg2Rad) * distance;
+            float offsetY = Mathf.Sin(angle * Mathf.Deg2Rad) * distance;
             /**/
-            Vector3 desiredPosition = target.position + (Quaternion.Euler(0, angle, 0) * offset) - (target.forward * distance);
-            transform.position = Vector3.Lerp(transform.position, desiredPosition, travelTime*Time.deltaTime);
-            transform.LookAt(target);
-            //RelocateCamera();
-        }
-
-        /*private void RelocateCamera()
-        {
-            transform.position = target.transform.position + offset- transform.forward*distance;
-            transform.rotation = Quaternion.Euler(angle, target.eulerAngles.y, 0);
+            var newPosition = referencePosition + target.rotation * new Vector3(0, offsetY, offsetX);
+            //Vector3 desiredPosition = target.position + (Quaternion.Euler(0, angle, 0) * offset) - (target.forward * distance);
+            transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime/travelTime);
             transform.LookAt(target.position+offset);
-        }*/
+        }
     }
 
 }
