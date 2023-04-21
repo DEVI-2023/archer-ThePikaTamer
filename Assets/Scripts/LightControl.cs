@@ -28,13 +28,5 @@ public class LightControl : MonoBehaviour
                 GetComponent<Light>().intensity++;
             }
         }
-
-        else
-        {
-            while (GetComponent<Light>().intensity >= 0)
-            {
-                GetComponent<Light>().intensity--;
-            }
-        }
     }
 }
