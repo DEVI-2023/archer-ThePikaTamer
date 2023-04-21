@@ -12,6 +12,7 @@ namespace Archer
         // Cuántas vidas tiene el enemigo
         [SerializeField]
         private int hitPoints;
+        public GameObject light;
 
         private Animator animator;
 
@@ -36,7 +37,21 @@ namespace Archer
 
         private void Die()
         {
+            StartCoroutine(ToDie());
+        }
+
+        private IEnumerator ToDie()
+        {
+            print("WRYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
             animator.SetTrigger("Die");
+            //light.GetComponent<LightControl>().active = true;
+            light.GetComponent<Light>().intensity = 1;
+
+            yield return new WaitForSeconds(1.3f);
+
+
+           Destroy(this);
+
         }
     }
 

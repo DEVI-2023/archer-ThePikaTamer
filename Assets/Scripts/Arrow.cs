@@ -45,12 +45,12 @@ namespace Archer
             if(other.gameObject.layer==LayerMask.NameToLayer("Enemy"))
             // ... Y si lo tiene, le hacemos daño (la siguiente comprohación es equivalente a hacer if (enemy != null) { enemy.Hit(); }
             {
-                print("WRYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
                 if(other.GetComponent<Enemy>()!=null)
                 {
                     print("Dio Da!");
+                    other.GetComponent<Enemy>().Hit();
                 }
-                //other.GetComponent<Enemy>().Hit();
+                //
             }
         }
 
